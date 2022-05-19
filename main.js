@@ -7,12 +7,12 @@
 const arr = function(array){
     const result = array.filter((number, index, arr) => arr.indexOf(number) == index);
 
-    return console.log(result);
+    return result;
 }
 
 arrayMain = [1,2,7,4,4,5,6,6,6,7,8,9,9,9,9,9,9,9,7,6,6,6];
 console.log(arrayMain);
-arr(arrayMain);
+console.log(arr(arrayMain));
 
 // /*
 //      2. Реализовать методы, которые в процессе выполнения строки (2).plus(3).minus(1) дали бы на выходе 4.
@@ -39,11 +39,11 @@ function anagram(firstWord, secondWord){
     let secondWordNormalization = secondWord.toLowerCase();
     
     if(firstWord.length === secondWord.length){
-        firstWordArray = firstWordNormalization.split('');
-        secondWordArray = secondWordNormalization.split('');
+        const firstWordArray = firstWordNormalization.split('');
+        const secondWordArray = secondWordNormalization.split('');
 
-        result1 = firstWordArray.sort();
-        result2 = secondWordArray.sort();
+        const result1 = firstWordArray.sort();
+        const result2 = secondWordArray.sort();
 
         let count = 0;
         for(let i = 0; i < firstWordArray.length; i++){
@@ -90,7 +90,8 @@ function solution(words) {
         }
         counter = 0;
     }
-    return result2.filter(item => item !== null);
+    
+    return result2.filter(item => item !== null).reverse();
 }
 console.log(words);
 console.log(solution(words));
